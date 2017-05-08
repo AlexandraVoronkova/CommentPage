@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Page comment</title>
+</head>
+<body>
+	<h1>Страница с комментариями</h1>
+	<hr>
+	<% for (var i = 0; i < comments.length; i++) { %>
+	<div>
+		<p><b><%=comments[i].name%> </b>[<%=comments[i].date%>]:<br>
+		<%=comments[i].comment%></p>
+	</div>
+	<% } %>
+	<br>
+	<form action="/comment" method="post">
+	<label for="name">Имя пользователя: </label><br>
+		<input type="text" name="name" id="name"><br>
+		<label for="comment">Комментарий: </label><br>
+		<textarea name="comment" id="comment" ></textarea><br>
+		<button>Добавить новый комментарий</button>
+	</form>
+</body>
+</html>
