@@ -1,0 +1,28 @@
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		title="Page comment"
+	body
+		h1 Страница с комментариями
+		hr
+		- var comments
+		- for (var i = 0; i < comments.length; i++)
+			div
+				p 
+					b 
+					comments[i].name
+					comments[i].date
+					br
+					comments[i].comment
+		br
+		form(action="/comment" method="post")
+			label(for="name") Имя пользователя: 
+			br
+			input(type="text" name="name" id="name")
+			br
+			label(for="comment") Комментарий: 
+			br
+			textarea(name="comment" id="comment")
+			br
+			button Добавить новый комментарий
