@@ -5,10 +5,12 @@ var bodyParser = require ( 'body-Parser' );
 router.use( bodyParser.urlencoded({extended: true}) );
 router.use( bodyParser.json());
 
+db=require('../db');
+
 //Обработчик '/comments'
 router.get('/comments', function(req, res) {
-	collection.find({}).toArray(function(err, comments) {
-			res.render('index.ejs',{comments:comments});
+	db.comments.find({}).toArray(function(err, comments) {
+			res.render('index.jade',{comments:comments});
 		});
 });
 //обработчик получения данных
@@ -18,7 +20,7 @@ router.post('/comments', function(req, res) {
 	var comment=req.body.comment;
 	//добавление комментария в БД
 	var newComment = {name: name, comment:comment, date: new Date()};
-	collection.insertOne(newComment);
+	db.comments.insertOne(newComment);
 	res.redirect('/comments');
 });
 

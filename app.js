@@ -12,19 +12,14 @@ function startApp(){
 	});
 }
 
-var MongoClient = require('mongodb').MongoClient;
-var Collection = require('mongodbext').Collection;
-
-MongoClient.connect('mongodb://localhost:27017/chat',function(err, db){
-		if (err) {
-			console.error(err);
-			return;
-		}
-		else{
-			collection = db.collection('comments');
-			startApp();
-		}
-	});
+var db = require('./db');
+db.init(function(err){
+	if (err) {
+            throw err;
+        } else {
+            startApp();
+        }
+})
 
 //var Step = require('twostep').Step;
 

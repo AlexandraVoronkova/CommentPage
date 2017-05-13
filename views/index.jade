@@ -6,17 +6,14 @@ html
 	body
 		h1 Страница с комментариями
 		hr
-		- var comments
-		- for (var i = 0; i < comments.length; i++)
-			div
-				p 
-					b 
-					comments[i].name
-					comments[i].date
-					br
-					comments[i].comment
-		br
-		form(action="/comment" method="post")
+		ul.comments
+			each comment in comments
+				li
+					b
+						span.name #{comment.name} 
+					span.date #{comment.date}
+					p.comment #{comment.comment}
+		form(action="/comments" method="post")
 			label(for="name") Имя пользователя: 
 			br
 			input(type="text" name="name" id="name")

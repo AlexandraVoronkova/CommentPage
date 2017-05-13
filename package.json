@@ -8,7 +8,8 @@
     "express": "^4.15.2",
     "mongodb": "^2.2.26",
     "mongodbext": "^2.1.0",
-    "twostep": "^0.4.2"
+    "twostep": "^0.4.2",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {},
   "scripts": {
