@@ -11,7 +11,7 @@ module.exports = function(router){
 			res.render('index.jade',{comments:comments});
 		});
 	});
-
+	
 	router.use( bodyParser.urlencoded({extended: true}) );
 	router.use( bodyParser.json());
 	//обработчик получения данных

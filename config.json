@@ -1,0 +1,9 @@
+{
+	"host": "localhost",
+	"port": 3000,
+	"db":{
+		"name": "chat",
+		"host": "localhost",
+		"port": 27017
+	}
+}
