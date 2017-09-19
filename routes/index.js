@@ -2,7 +2,7 @@
 var _ = require('underscore'),
 	express = require('express');
 
-var router = express.Router({mergeParams:true})
+var router = express.Router({mergeParams: true})
 
 var routes = ['comments'];
 

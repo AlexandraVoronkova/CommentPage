@@ -11,7 +11,7 @@
 exports.collections = {};
  
 exports.init = function(callback) { 
-    Client.connect('mongodb://'+config.db.host+':'+config.db.port+'/'+config.db.name, function(err, db) { 
+    Client.connect('mongodb://' + config.db.host + ':' + config.db.port + '/' + config.db.name, function(err, db) { 
         _(collections).each(function(colName) {
             // получаем модуль каждой коллекции
             var module = require('./' + colName);
