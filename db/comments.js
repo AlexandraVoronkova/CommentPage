@@ -1,6 +1,7 @@
 'use strict';
 
  var Collection = require('mongodbext').Collection;
+
  // в exports.create передается db из index.js init
  exports.create = function(db) { // коллекцию будем создавать в init index.js
     // создание коллекции в mongodbext
