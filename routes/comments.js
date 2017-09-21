@@ -32,8 +32,8 @@ module.exports = function(router) {
 		},
 		function(err) {
 			next();
-            }
-		)
+		}
+		);
 	});
 	
 	//обработчик получения данных
