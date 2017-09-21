@@ -28,11 +28,10 @@ module.exports = function(router) {
 		},
 		function(err, comments) {
 			res.render('index.jade', {comments: comments});
-			next();
+			this.pass(null);
 		},
 		function(err) {
-                console.log('Error: ', err);
-                process.exit(1);
+			next();
             }
 		)
 	});
@@ -47,11 +46,10 @@ module.exports = function(router) {
 			},
 			function(err) {
 				res.redirect('/comments');
-				next();
+				this.pass(null);
 			},
 			function(err) {
-				console.log('Error: ', err);
-				process.exit(1);
+				next();
 			}
 			);
 	});
