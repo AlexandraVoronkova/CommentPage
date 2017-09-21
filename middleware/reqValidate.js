@@ -10,7 +10,7 @@ module.exports = function() {
 				reqFields: ['params', 'query', 'body']
 			});
 
-			var data = _(options.reqFields).reduce(function(data, field){
+			var data = _(options.reqFields).reduce(function(data, field) {
 				return _(data).extend(req[field]);
 			}, {});
 
